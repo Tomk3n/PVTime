@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+FILE=/config/.env
+if [ ! -f "$FILE" ]; then
+    cp /app/.env.default /config/.env
+fi
+FILE=/config/user.json
+if [ ! -f "$FILE" ]; then
+    cp /app/user.json.default /config/user.json
+fi
