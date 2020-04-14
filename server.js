@@ -58,7 +58,7 @@ app.post('/*', upload.single('thumb'), async (req, res) => {
       response = await api.follow(episodeInfo.id);
       if (response.body.result === 'OK') {
         // after we followed the show we need to send another checkin
-        response = await api.checkIn(
+        await api.checkIn(
           {
             show_id: episodeInfo.id,
             season_number: episodeInfo.season,
